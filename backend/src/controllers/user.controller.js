@@ -49,7 +49,7 @@ export const followUser = asyncHandler(async (req, res) => {
     const {userId} = getAuth(req);
     const {targetUserId} = req.params;
 
-    if (userId === targetUserId) return res.status(400).json({error: 'Yout cannot follow yourself'});
+    if (userId === targetUserId) return res.status(400).json({error: 'You cannot follow yourself'});
 
     const currentUser = await User.findOne({clerkId: userId});
     const targetUser = await User.findById(targetUserId);

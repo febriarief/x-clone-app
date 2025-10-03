@@ -8,7 +8,7 @@ import Comment from '../models/comment.model.js';
 
 export const getPosts = asyncHandler(async (req, res) => {
     const posts = await Post.find()
-    .sort({cratedAt: -1})
+    .sort({createdAt: -1})
     .populate('user', 'username firstName lastName profilePicture')
     .populate({
         path: 'comments',
@@ -42,7 +42,7 @@ export const getUserPosts = asyncHandler(async (req, res) => {
     if (!user) return res.status(404).json({error: 'User not found'});
 
     const posts = await Post.find({user: user._id})
-    .sort({cratedAt: -1})
+    .sort({createdAt: -1})
     .populate('user', 'username firstName lastName profilePicture')
     .populate({
         path: 'comments',
@@ -139,7 +139,7 @@ export const deletePost = asyncHandler(async (req, res) => {
 
     if (!user || !post) return res.status(404).json({error: 'User or post not found'});
 
-    if (!post.user.toString() !== user._id.toString()) {
+    if (post.user.toString() !== user._id.toString()) {
         return res.status(403).json({error: 'You can only delete your own posts'});
     }
 
