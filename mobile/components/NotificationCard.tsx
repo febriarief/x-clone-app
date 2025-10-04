@@ -54,7 +54,7 @@ const NotificationCard = ({notification, onDelete}: NotificationCardProps) => {
         <View className='relative mr-3'>
           <Image
             source={{uri:notification.from.profilePicture}}
-            className='size-12 rouded-full'
+            className='size-12 rounded-full'
           />
 
           <View className='absolute -bottom-1 -right-1 size-6 bg-white items-center justify-center'>

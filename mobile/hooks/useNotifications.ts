@@ -33,6 +33,6 @@ export const useNotifications = () => {
     refetch,
     isRefetching,
     deleteNotification,
-    isDeletingNotificition: deleteNotificationMutation.isPending
+    isDeletingNotification: deleteNotificationMutation.isPending
   };
 };
