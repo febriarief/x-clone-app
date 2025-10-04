@@ -47,7 +47,7 @@ export const useCreatePost = () => {
 
 	const handleImagePicker = async (useCamera: boolean = false) => {
 		const permissionResult = useCamera 
-			? await ImagePicker.requestMediaLibraryPermissionsAsync()
+			? await ImagePicker.requestCameraPermissionsAsync()
 			: await ImagePicker.requestMediaLibraryPermissionsAsync();
 
 		if (permissionResult.status !== 'granted') {
