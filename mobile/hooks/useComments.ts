@@ -7,7 +7,7 @@ export const useComments = () => {
   const [commentText, setCommentText] = useState('');
   const api = useApiClient();
 
-  const querClient = useQueryClient();
+  const queryClient = useQueryClient();
 
   const createCommentMutation = useMutation({
     mutationFn: async ({postId, content}: {postId: string; content: string}) => {
@@ -16,7 +16,7 @@ export const useComments = () => {
     },
     onSuccess: () => {
       setCommentText('');
-      querClient.invalidateQueries({queryKey:['posts']})
+      queryClient.invalidateQueries({queryKey:['posts']})
     },
     onError: () => {
       Alert.alert('Error', 'Failed to post comment. Try again later.');
