@@ -9,6 +9,7 @@ export const aj = arcjet({
         detectBot({
             mode: 'LIVE',
             allow: [
+                'JAVA_OKHTTP',
                 'CATEGORY:SEARCH_ENGINE'
             ]
         }),
