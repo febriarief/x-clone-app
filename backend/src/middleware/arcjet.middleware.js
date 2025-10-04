@@ -13,7 +13,7 @@ export const arcjetMiddleware = async (req, res, next) => {
                     message: 'Rate limit exceeded. Please try again later.'
                 });
             } else if (decision.reason.isBot()) {
-                return res.sattus(403).json({
+                return res.status(403).json({
                     error: 'Bot access denied',
                     message: 'Automated requests are not allowed'
                 });
@@ -27,7 +27,7 @@ export const arcjetMiddleware = async (req, res, next) => {
 
         if (decision.results.some((result) => result.reason.isBot() && result.reason.isSpoofed())) {
             return res.status(403).json({
-                error: 'Sppofed bot detected',
+                error: 'Spoofed bot detected',
                 message: 'Malicious bot activity detected'
             });
         }
