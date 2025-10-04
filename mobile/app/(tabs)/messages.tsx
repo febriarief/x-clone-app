@@ -145,7 +145,7 @@ const MessagesScreen = () => {
               <ScrollView className='flex-1 p-4'>
                 <View className='mb-4'>
                   <Text className='text-center text-gray-400 text-sm mb-4'>
-                    This is the begining of yout conversations with {selectedConversation.user.name}
+                    This is the begining of your conversations with {selectedConversation.user.name}
                   </Text>
 
                   {/* Conversation message */}
@@ -162,7 +162,7 @@ const MessagesScreen = () => {
                       )}
                       <View className={`flex-1 ${message.fromUser ? 'items-end' : ''}`}>
                         <View
-                          className={`rounded-2xl px-4 py-3 mx-w-xs ${message.fromUser ? 'bg-blue-500' : 'bg-gray-100'}`}
+                          className={`rounded-2xl px-4 py-3 max-w-xs ${message.fromUser ? 'bg-blue-500' : 'bg-gray-100'}`}
                         >
                           <Text className={message.fromUser ? 'text-white' : 'text-gray-900'}>
                             {message.text}
