@@ -16,6 +16,6 @@ export const formatDate = (dateString: string): string => {
   if (minutes < 1) return 'now';
   if (minutes < 60) return `${minutes}m`;
   if (hours < 24) return `${hours}h`;
-  if (days < 24) return `${days}h`;
+  if (days < 7) return `${days}h`;
   return `${Math.floor(days/7)}w`;
 };
