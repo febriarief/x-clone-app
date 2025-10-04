@@ -145,7 +145,7 @@ const MessagesScreen = () => {
               <ScrollView className='flex-1 p-4'>
                 <View className='mb-4'>
                   <Text className='text-center text-gray-400 text-sm mb-4'>
-                    This is the begining of your conversations with {selectedConversation.user.name}
+                    This is the beginning of your conversations with {selectedConversation.user.name}
                   </Text>
 
                   {/* Conversation message */}
