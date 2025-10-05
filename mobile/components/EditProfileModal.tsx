@@ -34,10 +34,10 @@ const EditProfileModal = ({formData, isUpdating, isVisible, onClose, updateFormF
         <TouchableOpacity
           onPress={handleSave}
           disabled={isUpdating}
-          className={`${isUpdating} ? 'opacity-50' : ''`}
+          className={`${isUpdating ? 'opacity-50' : ''}`}
         >
           {isUpdating ? (
-            <ActivityIndicator size='small' color='#1DAF2' />
+            <ActivityIndicator size='small' color='#1DA1F2' />
           ) : (
             <Text className='text-blue-500 text-lg font-semibold'>Save</Text>
           )}
